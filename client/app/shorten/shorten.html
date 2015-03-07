@@ -1,12 +1,20 @@
 <div id='container'>
-  <h1>shorten</h1>
+  <h2>Shorten</h2>
   <form name="linkSubmit" ng-submit='shorten()'>
-    <input type='text' ng-model='link.url'>
-    <button>shorten</button>
+    <input class='text' type='text' ng-model='link.url'>
+    <input type='submit' value='Shorten'>
   </form>
-  <h2>This is progress</h2>
+  <img class='spinner' src='/assets/spiffygif_46x46.gif'>
+  <div class='message'></div>
 </div>
 
+
+<!-- <form>
+      <input class='text' type='text' name='url'>
+      <input type='submit' value='Shorten'>
+  </form>
+  <img class='spinner' src='/spiffygif_46x46.gif'>
+  <div class='message'></div> -->
 
 <!--
 <div id='signup'>
