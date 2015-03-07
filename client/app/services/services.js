@@ -2,13 +2,21 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+  var linksArray = [];
 
   var getLinks = function (link) {
     return $http({
       method: 'GET',
-      url: '/api/links',
-
+      url: '/api/links'
+    })
+    .then(function (resp){
+      linksArray = resp.data;
     });
+  };
+
+  var returnArray = function(){
+    console.log(linksArray);
+    return linksArray;
   };
 
   var saveLink = function (link) {
@@ -25,7 +33,8 @@ angular.module('shortly.services', [])
 
   return {
     getLinks: getLinks,
-    saveLink: saveLink
+    saveLink: saveLink,
+    returnArray: returnArray
   };
 
 })

@@ -4,10 +4,10 @@ angular.module('shortly.shorten', [])
   // Your code here
   $scope.link = {};
 
-  $scope.shorten = function() {
+  $scope.addLink = function() {
     Links.saveLink($scope.link)
       .then(function(){
-        console.log("ng module says: link shortened")
+        console.log("ng module says: link shortened");
       })
       .catch(function (error) {
         console.error(error);
