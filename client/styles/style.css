@@ -27,7 +27,7 @@ h1 {
   list-style: none;
 }
 
-.navigation li {
+.navigation li:not(.logout) {
   float: left;
 }
 
@@ -38,6 +38,10 @@ h1 {
   padding: 10px;
   display: block;
   text-align: center;
+}
+
+.logout {
+  float: right;
 }
 
 .navigation li a:hover {
