@@ -14,6 +14,13 @@ angular.module('shortly.services', [])
     });
   };
 
+  var navToLink = function(slug) {
+    return $http({
+      method: 'GET',
+      url: '/api/links/'+slug
+    });
+  };
+
   var returnArray = function(){
     console.log(linksArray);
     return linksArray;
