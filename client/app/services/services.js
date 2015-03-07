@@ -6,7 +6,7 @@ angular.module('shortly.services', [])
   var getLinks = function (link) {
     return $http({
       method: 'GET',
-      url: '/api'
+      url: '/api/links',
 
     });
   };
@@ -14,8 +14,11 @@ angular.module('shortly.services', [])
   var saveLink = function (link) {
     return $http({
       method: 'POST',
-      url: XXXXX,
+      url: '/api/links',
       data: link
+    })
+    .then(function (resp) {
+      console.log("link shortened: ", resp);
     });
   };
 

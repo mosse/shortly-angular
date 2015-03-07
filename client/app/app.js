@@ -21,7 +21,7 @@ angular.module('shortly', [
       controller: 'LinksController'
     })
     .when('/shorten', {
-      templateURL: 'app/shorten/shorten.html',
+      templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
 
