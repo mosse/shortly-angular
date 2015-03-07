@@ -12,14 +12,20 @@ angular.module('shortly.services', [])
   };
 
   var saveLink = function (link) {
+    console.log(link);
     return $http({
       method: 'POST',
       url: '/api/links',
       data: link
     })
     .then(function (resp) {
-      console.log("link shortened: ", resp);
+      console.log("services say link shortened: ", resp);
     });
+  };
+
+  return {
+    getLinks: getLinks,
+    saveLink: saveLink
   };
 
 })
