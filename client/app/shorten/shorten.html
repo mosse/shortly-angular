@@ -1,10 +1,18 @@
 <div id='container'>
   <h2>Shorten</h2>
-  <form name="linkSubmit" ng-submit='addLink()'>
-    <input class='text' type='text' ng-model='link.url'>
-    <input type='submit' value='Shorten'>
+  <form name="linkSubmit" ng-submit='addLink()' novalidate>
+    <input name='link' type='url' ng-model='link.url' placeholder="Enter a URL to shorten here" required ng-class="{'error': linkSubmit.$invalid && linkSubmit.$dirty}">
+    <button type='submit' value='Shorten' ng-disabled='linkSubmit.$invalid'>add</button>
   </form>
-  <img class='spinner' src='/assets/spiffygif_46x46.gif'>
+
+  <div ng-if='linkSubmit.link.$error.required && linkSubmit.$dirty' class="message">
+      <h2>Url required</h2>
+    </div>
+    <div ng-show='linkSubmit.link.$error.url && linkSubmit.$dirty' class="message">
+      <h2>Not a valid url</h2>
+    </div>
+
+  <img ng-if='loading' class='spinner' src='/assets/spiffygif_46x46.gif'>
   <div class='message'></div>
 </div>
 
